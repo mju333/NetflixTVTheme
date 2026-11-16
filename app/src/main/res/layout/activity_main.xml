@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://android.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#141414"
+    android:padding="32dp">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_original_theme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/selector_btn"
+                android:contentDescription="الثيم الأصلي"
+                android:focusable="true"
+                android:src="@android:drawable/ic_menu_revert" />
+
+            <ImageButton
+                android:id="@+id/btn_wifi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/selector_btn"
+                android:contentDescription="الواي فاي"
+                android:focusable="true"
+                android:src="@android:drawable/ic_menu_share" />
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/selector_btn"
+                android:contentDescription="الإعدادات"
+                android:focusable="true"
+                android:src="@android:drawable/ic_menu_preferences" />
+
+            <ImageButton
+                android:id="@+id/btn_clock_style"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_btn"
+                android:contentDescription="تخصيص الساعة"
+                android:focusable="true"
+                android:src="@android:drawable/ic_menu_edit" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextClock
+                android:id="@+id/digital_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm a"
+                android:format24Hour="HH:mm"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/weather_city_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="جدة • 29°C صافي"
+                android:textColor="#B3B3B3"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="تطبيقاتي المفضلة (اضغط مطولاً للحذف أو التغيير)"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/apps_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:clipToPadding="false" />
+    </LinearLayout>
+
+</RelativeLayout>
